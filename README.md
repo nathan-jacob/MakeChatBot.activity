@@ -1,19 +1,43 @@
+# Make Chatbot Documentation
 
-Make Chatbot Documentation 
-Making a Question:
-	Questiona:answer
-	How old are you?a:1
-	If you use these key words they will be replaced with their respective dynamic values
-	|MONTH|
-	|DAY|
-	|TIME|
-	|YEAR|
-	|QUESTION|
+This sugar activity allows people to make and interact with a chatbot.
 
-Asking a Question:
-Simply type the question in
-Importing:
-Type in i: followed by the actual JSON
-Exporting:
-type in e: and copy the result
+## Asking a question
+
+Simply type in your question
+```
+Hello
+```
+```
+Hi
+```
+
+### Making a question
+
+Question **a:** answer
+```
+How old are you?a:1
+```
+If you use these key words they will be replaced with their respective dynamic values
+**|MONTH|
+|DAY|
+|TIME|
+|YEAR|
+|QUESTION|**
+
+### Importing
+
+Type in i: followed by the appropriate JSON
+
+```
+i:{'Hello': 'Hi', 'How are you': 'Good'}
+```
+## Exporting questiom
+
+Type in e: and copy the result
+```
+e:
+```
+
+**//TODO-Important: HAVE FUN. 
 
