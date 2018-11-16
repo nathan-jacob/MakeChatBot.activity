@@ -39,5 +39,5 @@ Type in e: and copy the result
 e:
 ```
 
->>**//TODO-Important: HAVE FUN. **
+>//TODO-Important: HAVE FUN.
 
