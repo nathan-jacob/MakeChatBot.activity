@@ -1,14 +1,14 @@
 
-Make Chatbot Documentation
+Make Chatbot Documentation 
 Making a Question:
 	Questiona:answer
 	How old are you?a:1
 	If you use these key words they will be replaced with their respective dynamic values
-|MONTH|
-|DAY|
-|TIME|
-|YEAR|
-|QUESTION|
+	|MONTH|
+	|DAY|
+	|TIME|
+	|YEAR|
+	|QUESTION|
 
 Asking a Question:
 Simply type the question in
