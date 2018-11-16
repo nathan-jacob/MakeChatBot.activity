@@ -1,0 +1,8 @@
+[Activity]
+name = HelloWorld
+activity_version = 6
+bundle_id = org.sugarlabs.MakeChatBot
+exec = sugar-activity activity.MakeChatBotActivity
+icon = activity-helloworld
+license = GPLv2+
+repository = https://github.com/sugarlabs/hello-world-fork.git
