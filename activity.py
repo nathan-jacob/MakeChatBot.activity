@@ -97,7 +97,7 @@ class MakeChatBotActivity(activity.Activity):
         #entry
         self.entry = Gtk.Entry()
         self.entry.set_width_chars(60)
-        self.entry.set_text(_("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions"))
+        self.entry.set_placeholder_text("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions")
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
         #Help
