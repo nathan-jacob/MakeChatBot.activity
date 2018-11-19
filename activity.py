@@ -31,7 +31,7 @@ from sugar3.activity.widgets import ShareButton
 from sugar3.activity.widgets import DescriptionItem
 
 
-class MakeChatBotActivity(activity.Activity):
+class HelloWorldActivity(activity.Activity):
     """HelloWorldActivity class as specified in activity.info"""
 
     import json
@@ -96,10 +96,15 @@ class MakeChatBotActivity(activity.Activity):
 
         #entry
         self.entry = Gtk.Entry()
+        self.entry.set_width_chars(60)
         self.entry.set_text(_("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions"))
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
-
+        #Help
+        self.label0 = Gtk.Label()
+        self.label0.set_text(_("For Help Regarding The Make chatbot activity please see bit.do/mcbh"))
+        self.grid.attach(self.label0, 0, 1, 4, 1)
+        self.label0.show()
         self.grid.show()
 
     def import1(self, json_stuff):
@@ -143,7 +148,7 @@ class MakeChatBotActivity(activity.Activity):
             json_data = json.dumps(self.questions)
             return str(json_data)
         except:
-            return "{\'Hello\': \'Hi\', \'How are you\': \'Good\'}"
+            return "{Hello: Hi, How are you: Good}"
 
     def chat(self, EntryValue):
         query = str(self.entry.get_text())
@@ -171,6 +176,7 @@ class MakeChatBotActivity(activity.Activity):
             print(i)
             self.label.set_text(r_value)
         except:
-            self.label.show()
+            self.label.hide()
+        self.label.show()
         self.grid.show()
         i = 5
