@@ -31,7 +31,7 @@ from sugar3.activity.widgets import ShareButton
 from sugar3.activity.widgets import DescriptionItem
 
 
-class MakeChatBotActivity(activity.Activity):
+class HelloWorldActivity(activity.Activity):
     """HelloWorldActivity class as specified in activity.info"""
 
     import json
@@ -97,14 +97,35 @@ class MakeChatBotActivity(activity.Activity):
         #entry
         self.entry = Gtk.Entry()
         self.entry.set_width_chars(60)
-        self.entry.set_placeholder_text("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions")
+        self.entry.set_placeholder_text(_("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions"))
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
         #Help
         self.label0 = Gtk.Label()
-        self.label0.set_text(_("For Help Regarding The Make chatbot activity please see bit.do/mcbh"))
+        self.label0.set_text(_("see full docs at bit.do/mcbh"))
         self.grid.attach(self.label0, 0, 1, 4, 1)
         self.label0.show()
+        
+        self.label04 = Gtk.Label()
+        self.label04.set_text(_("To ask a question, simply type the question in"))
+        self.grid.attach(self.label04, 0, 2, 4, 1)
+        self.label04.show()
+
+        self.label03 = Gtk.Label()
+        self.label03.set_text(_("To add a question, type in Question:aAnswer"))
+        self.grid.attach(self.label03, 0, 3, 4, 1)
+        self.label03.show()
+
+        self.label02 = Gtk.Label()
+        self.label02.set_text(_("To import questions type in i: followed by appropriate JSON"))
+        self.grid.attach(self.label02, 0, 4, 4, 1)
+        self.label02.show()
+
+        self.label01 = Gtk.Label()
+        self.label01.set_text(_("To export questions, type in e:"))
+        self.grid.attach(self.label01, 0, 5, 4, 1)
+        self.label01.show()
+
         self.grid.show()
 
     def import1(self, json_stuff):
