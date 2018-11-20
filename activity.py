@@ -97,7 +97,7 @@ class MakeChatBotActivity(activity.Activity):
         #entry
         self.entry = Gtk.Entry()
         self.entry.set_width_chars(60)
-        self.entry.set_placeholder_text(_("Type in your question or add a question by typing q:<<yyour question>> a:<<your answer>> or type i:/e: to import/export questions"))
+        self.entry.set_placeholder_text(_("Type in your question or add a question"))
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
         #Help
@@ -112,7 +112,7 @@ class MakeChatBotActivity(activity.Activity):
         self.label04.show()
 
         self.label03 = Gtk.Label()
-        self.label03.set_text(_("To add a question, type in Question:aAnswer"))
+        self.label03.set_text(_("To add a question, type in Question?Answer"))
         self.grid.attach(self.label03, 0, 3, 4, 1)
         self.label03.show()
 
@@ -175,8 +175,8 @@ class MakeChatBotActivity(activity.Activity):
         query = str(self.entry.get_text())
         r_value = "fail"
         i = 0
-        if query.find("a:") != -1:
-            s2 = query.split('a:')
+        if query.find("?") != -1:
+            s2 = query.split('?')
             r_value = self.makeQA(str(s2[0]), str(s2[1]))
             i = 1
 
@@ -193,10 +193,9 @@ class MakeChatBotActivity(activity.Activity):
 
         self.label = Gtk.Label(_(r_value))
         self.grid.attach(self.label, 0, 0, 4, 1)
-        try:
-            print(i)
+        if(i==5):
+            self.label.hide()
             self.label.set_text(r_value)
-        except:
-            self.label.show()
+        self.label.show()
         self.grid.show()
         i = 5
