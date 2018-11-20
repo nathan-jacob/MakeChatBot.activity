@@ -197,7 +197,6 @@ class MakeChatBotActivity(activity.Activity):
             print(i)
             self.label.set_text(r_value)
         except:
-            self.label.hide()
-        self.label.show()
+            self.label.show()
         self.grid.show()
         i = 5
