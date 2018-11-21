@@ -175,7 +175,7 @@ class MakeChatBotActivity(activity.Activity):
         query = str(self.entry.get_text())
         r_value = "fail"
         i = 0
-        if query.find("?") != -1 and query.endswith('?') == false:
+        if query.find("?") != -1:
             s2 = query.split('?')
             r_value = self.makeQA(str(s2[0]), str(s2[1]))
             i = 1
@@ -188,7 +188,7 @@ class MakeChatBotActivity(activity.Activity):
             r_value = self.export1()
             i=1
 
-        if i != 1 or query.endswith('?'):
+        if i != 1:
             r_value = self.answerQA(query)
 
         self.label = Gtk.Label(_(r_value))
