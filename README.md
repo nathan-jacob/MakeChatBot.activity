@@ -18,6 +18,7 @@ Question **?** answer
 ```
 How old are you?1
 ```
+remember How old are you will result in 1, but How old are you? will result in an error, because the question mark is ignored.
 If you use these key words they will be replaced with their respective dynamic values
 **|MONTH|
 |DAY|
