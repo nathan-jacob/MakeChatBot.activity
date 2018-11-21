@@ -107,7 +107,7 @@ class MakeChatBotActivity(activity.Activity):
         self.help_label = Gtk.Label()
         alignment.add(self.help_label)
         help_message = '%s\n%s\n%s\n%s\n\n%s' % (
-            _("To ask a question, type the question into the form."),
+            _("To ask a question, type the question into the form without a question mark."),
             _("To add a new question, type Question?Answer"),
             _("To import questions type in \
 i: JSON-encoded Q/A dictionary entries,"),
