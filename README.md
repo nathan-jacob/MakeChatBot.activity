@@ -14,9 +14,9 @@ Hi
 
 ### Making a question
 
-Question **a:** answer
+Question **?** answer
 ```
-How old are you?a:1
+How old are you?1
 ```
 If you use these key words they will be replaced with their respective dynamic values
 **|MONTH|
