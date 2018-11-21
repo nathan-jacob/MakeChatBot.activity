@@ -98,6 +98,7 @@ class MakeChatBotActivity(activity.Activity):
         self.entry = Gtk.Entry()
         self.entry.set_width_chars(60)
         self.entry.set_placeholder_text(_("Type in your question or add a question"))
+        self.entry.connect("activate", self.chat)
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
         #Help
