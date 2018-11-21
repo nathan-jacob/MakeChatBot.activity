@@ -101,33 +101,26 @@ class MakeChatBotActivity(activity.Activity):
         self.entry.connect("activate", self.chat)
         self.grid.attach(self.entry, 10, 0, 4, 1)
         self.entry.show()
+
         #Help
-        self.label0 = Gtk.Label()
-        self.label0.set_text(_("see full docs at bit.do/mcbh"))
-        self.grid.attach(self.label0, 0, 1, 4, 1)
-        self.label0.show()
-        
-        self.label04 = Gtk.Label()
-        self.label04.set_text(_("To ask a question, simply type the question in"))
-        self.grid.attach(self.label04, 0, 2, 4, 1)
-        self.label04.show()
-
-        self.label03 = Gtk.Label()
-        self.label03.set_text(_("To add a question, type in Question?Answer"))
-        self.grid.attach(self.label03, 0, 3, 4, 1)
-        self.label03.show()
-
-        self.label02 = Gtk.Label()
-        self.label02.set_text(_("To import questions type in i: followed by appropriate JSON"))
-        self.grid.attach(self.label02, 0, 4, 4, 1)
-        self.label02.show()
-
-        self.label01 = Gtk.Label()
-        self.label01.set_text(_("To export questions, type in e:"))
-        self.grid.attach(self.label01, 0, 5, 4, 1)
-        self.label01.show()
-
+        alignment = Gtk.Alignment.new(0., 0.5, 0., 0.)
+        self.help_label = Gtk.Label()
+        alignment.add(self.help_label)
+        help_message = '%s\n%s\n%s\n%s\n\n%s' % (
+            _("To ask a question, type the question into the form."),
+            _("To add a new question, type Question?Answer"),
+            _("To import questions type in \
+i: JSON-encoded Q/A dictionary entries,"),
+            _("To export questions, type in e:"),
+            _("See full docs at https://bit.do/mcbh"))
+        self.help_label.set_text(help_message)
+        self.help_label.show()
+        self.grid.attach(alignment, 0, 1, 4, 5)
+        alignment.show()
         self.grid.show()
+
+        self.label = Gtk.Label("")
+        self.grid.attach(self.label, 0, 0, 4, 1)
 
     def import1(self, json_stuff):
         try:
@@ -183,18 +176,17 @@ class MakeChatBotActivity(activity.Activity):
 
         if (query.find("i:") != -1):
             r_value = self.import1(str(query.replace("i:","")))
-            i=1
+            i = 1
 
         if (query.find("e:") != -1):
             r_value = self.export1()
-            i=1
+            i = 1
 
         if i != 1:
             r_value = self.answerQA(query)
 
-        self.label = Gtk.Label(_(r_value))
-        self.grid.attach(self.label, 0, 0, 4, 1)
-        if(i==5):
+        self.label.set_text(r_value)
+        if (i == 5):
             self.label.hide()
             self.label.set_text(r_value)
         self.label.show()
