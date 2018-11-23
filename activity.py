@@ -169,7 +169,7 @@ i: JSON-encoded Q/A dictionary entries,"),
         query = str(self.entry.get_text())
         r_value = "fail"
         i = 0
-        if query.find("?") != -1:
+        if query.find("?") != -1 and not query.endswith("?"):
             s2 = query.split('?')
             r_value = self.makeQA(str(s2[0]), str(s2[1]))
             i = 1
@@ -183,7 +183,7 @@ i: JSON-encoded Q/A dictionary entries,"),
             i = 1
 
         if i != 1:
-            r_value = self.answerQA(query)
+            r_value = self.answerQA(query.replace("?",""))
 
         self.label.set_text(r_value)
         if (i == 5):
